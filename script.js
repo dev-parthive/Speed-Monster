@@ -45,6 +45,7 @@ const typeController = (e) => {
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    errorCount++;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
@@ -137,7 +138,7 @@ setInterval(() => {
   const timeSpent = (currentTime - startTime) / 1000;
   // timeSpend is convert into integer 
   const timeSpentInt = parseInt(timeSpent)
-  // console.log(timeSpentInt)
+  // console.log(timeSpent)
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpentInt : 0} seconds`;
 }, 1000);
